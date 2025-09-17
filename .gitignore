@@ -1,0 +1,8 @@
+
+venv/
+logs/
+*.ini
+*.logs 
+.idea/
+.env
+
