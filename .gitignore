@@ -5,4 +5,4 @@ logs/
 *.logs 
 .idea/
 .env
-
+__pycache__/

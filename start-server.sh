@@ -1,2 +1,2 @@
 #!/bin/sh
-exec flask --app backend run --debug
+exec ./venv/bin/flask --app backend run --debug

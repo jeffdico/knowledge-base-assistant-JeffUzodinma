@@ -13,6 +13,12 @@
       emit("searchrequest", category.value, q.value); // for the the button is clicked
   }
 
+  function trigger_search_ai(evt){
+    evt.preventDefault();
+    emit("search_ai")
+
+  }
+
   function trottle_update(evt){
 
       let name=evt.target.name, value=evt.target.value ;
@@ -28,24 +34,20 @@
 </script>
 <template>
 <div class="mt-5">
-    <div class="mb-4">
-      <label for="category"> Study Category </label>
-      <select v-model="category" @input="trottle_update" name="category" id="category" class="form-control form-control-lg mb-2">
-        <option value="0"> Select Category </option>
-      </select>
-    </div>
-    <div class="mb-4">
-      <label for="q"> Enter your Question </label>
-      <textarea v-model="q" rows="5" cols="5"
-          class="form-control form-control-lg mb-4"
-          @input="trottle_update" name="q" id="q" placeholder="type your question here"/>
-    </div>
-    <div class="mt-4">
-      <button class="btn btn-success btn-lg w-100" @click="trigger_search_emit"> Submit <i class="pi pi-send" style="color: white"></i></button>
+    <div class="d-flex flex-row align-items-center ">
+      <input v-model="q"
+          class="form-control form-control-lg w-3.5" @keydown.enter.exact.prevent="trigger_search_emit"
+          @input="trottle_update" name="q" id="q" placeholder="type your question"/>
+      &nbsp; &nbsp;
+      <button class="btn btn-success btn-lg w-10" title="browse the question" @click="trigger_search_emit"> Browse </button>
+      &nbsp;&nbsp;
+      <button class="btn btn-success btn-lg w-10" @click="trigger_search_ai" title="ask ai"> <i class="pi pi-microchip-ai"></i> </button>
     </div>
 </div>
 </template>
 
+<!---->
+<!-- -->
 <style scoped>
 
 </style>
