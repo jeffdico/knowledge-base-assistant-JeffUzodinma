@@ -20,6 +20,7 @@
 
 > *DYNACONF_AI_TEXT_EMBEDED*  _AI text_embeded model_
 
+> *DYNACONF_ENV*  _env configuration_
 
 ## First time steps 
 
@@ -27,7 +28,9 @@
 
 ### `source venv/bin/activate` _(linux - ubuntu command)_ 
  
-### `pip install -r requirements.txt` 
+### `pip install -r requirements.txt`
+
+###  `./start-server/sh`  _to start the flask application_
 
 ### `./apply_fixtures.sh`  _a bash shell executable script to initialize the folders and database data run on mac and linux only, otherwise run manually_
 
